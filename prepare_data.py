@@ -191,6 +191,6 @@ def augment_images_mnist(images):
 if __name__ == '__main__':
 
     create_mnist_dataset_npy(
-        input_dir=r'C:\Users\david\Google Drive\PhD\code\contrastive-predictive-coding-images\resources',
-        output_dir=r'C:\Users\david\Google Drive\PhD\code\contrastive-predictive-coding-images\resources\data'
+        input_dir=join('.', 'resources'),
+        output_dir=join('.', 'resources', 'data')
     )

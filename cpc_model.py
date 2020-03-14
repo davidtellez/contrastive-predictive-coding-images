@@ -252,7 +252,7 @@ class CPCLayer(keras.layers.Layer):
     def compute_output_shape(self, input_shape):
         batch, rows, cols, n_samples, code = input_shape[1]
         batch, pred_dir, pred_offset, rows, cols, code = input_shape[2]
-        return (batch, 15*7*pred_dir, n_samples + 1)  # hardcoded 63 for ijk * pred_dir
+        return (batch, (1+2+3+4+5)*7*pred_dir, n_samples + 1)
 
 
 def network_encoder(x, code_size):
