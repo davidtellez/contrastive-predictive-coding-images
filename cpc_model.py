@@ -299,9 +299,6 @@ def network_context(x, code_size, pred_dir):
     :return: output Keras layer.
     """
 
-    # WARNING: do not use a receptive field larger than 3x3 (filter size or multiple layers)
-    # Otherwise, information from target patches will leak and semantics will be ignored
-
     pd_map = {0: 'tb', 1: 'bt', 2: 'lr', 3: 'rl'}
 
     x = MaskedConvolution2D(mask_orientation=pd_map[pred_dir], filters=code_size, kernel_size=3, strides=1, activation='linear', padding='same')(x)  # rf: 3x3
